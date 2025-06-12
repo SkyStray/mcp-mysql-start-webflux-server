@@ -18,18 +18,19 @@ spring:
     password: dev_rd
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect  # ??????
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # 指定数据库平台
     hibernate:
-      ddl-auto: update  # ???????
-    show-sql: true      # ?? SQL ??
+      ddl-auto: update  # 自动更新数据库结构
+    show-sql: true      # 控制台显示 SQL 语句
 logging:
   file:
     name: ./target/mcp-mysql-start-webflux-server.log
   level:
-    # ????????????????
+    # 调整AI聊天客户端的日志级别
     org.springframework.ai.chat.client.advisor: DEBUG
-    # ??????????
+    # 调整AI客户端核心日志级别
     org.springframework.ai.chat.client: DEBUG
+    # 调整AI模型相关日志级别
     org.springframework.ai.model: TRACE
-    # ???????AI????
+    # 调整整个AI模块的日志级别
     org.springframework.ai: INFO
