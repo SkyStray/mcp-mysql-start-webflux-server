@@ -10,7 +10,7 @@ spring:
         version: 1.0.0
         type: sync
         stdio: false
-        port: 8888
+
         enabled: true
   datasource:
     url: jdbc:mysql://cd-cdb-dg1tsqr2.sql.tencentcdb.com:27806/db_study?charset=UTF-8&useUnicode=true&characterEncoding=UTF-8&useSSL=false&se
@@ -34,3 +34,5 @@ logging:
     org.springframework.ai.model: TRACE
     # 调整整个AI模块的日志级别
     org.springframework.ai: INFO
+server:
+  port: 8888
