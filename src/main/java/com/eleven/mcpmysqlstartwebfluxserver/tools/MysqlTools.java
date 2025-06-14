@@ -249,27 +249,27 @@ public class MysqlTools {
      * @param result 查询结果
      * @return Markdown 表格字符串
      */
-    @Tool(description = "将查询结果转换为 Markdown 表格")
-    public String toMarkdownTable(List<Map<String, Object>> result) {
-        if (result.isEmpty()) {
-            return "无数据";
-        }
-
-        StringBuilder sb = new StringBuilder();
-        // 表头
-        Map<String, Object> firstRow = result.get(0);
-        sb.append("| ").append(String.join(" | ", firstRow.keySet())).append(" |\n");
-        sb.append("|").append("---|".repeat(firstRow.size())).append("\n");
-
-        // 数据行
-        for (Map<String, Object> row : result) {
-            List<String> values = row.values().stream()
-                    .map(v -> v == null ? "NULL" : v.toString())
-                    .toList();
-            sb.append("| ").append(String.join(" | ", values)).append(" |\n");
-        }
-        return sb.toString();
-    }
+    // @Tool(description = "将查询结果转换为 Markdown 表格")
+    // public String toMarkdownTable(List<Map<String, Object>> result) {
+    //     if (result.isEmpty()) {
+    //         return "无数据";
+    //     }
+//
+    //     StringBuilder sb = new StringBuilder();
+    //     // 表头
+    //     Map<String, Object> firstRow = result.get(0);
+    //     sb.append("| ").append(String.join(" | ", firstRow.keySet())).append(" |\n");
+    //     sb.append("|").append("---|".repeat(firstRow.size())).append("\n");
+//
+    //     // 数据行
+    //     for (Map<String, Object> row : result) {
+    //         List<String> values = row.values().stream()
+    //                 .map(v -> v == null ? "NULL" : v.toString())
+    //                 .toList();
+    //         sb.append("| ").append(String.join(" | ", values)).append(" |\n");
+    //     }
+    //     return sb.toString();
+    // }
 
 
 
